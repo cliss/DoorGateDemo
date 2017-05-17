@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoorGateDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are X people in the room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOy-dd-Esi">
+                                <rect key="frame" x="24" y="50" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Room is Open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XG-ZV-gZ4">
+                                <rect key="frame" x="23.5" y="103" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HT-Cb-6nS">
+                                <rect key="frame" x="156" y="537" width="63" height="30"/>
+                                <state key="normal" title="Walk Out"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-Yf-hm2">
+                                <rect key="frame" x="162" y="491" width="50" height="30"/>
+                                <state key="normal" title="Walk In"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zOy-dd-Esi" secondAttribute="trailing" constant="8" id="0bT-QM-5S6"/>
+                            <constraint firstItem="Wbk-Yf-hm2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4RT-uq-Rvk"/>
+                            <constraint firstItem="5HT-Cb-6nS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5LC-hn-ZfI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5HT-Cb-6nS" secondAttribute="bottom" constant="100" id="UbA-3X-LQz"/>
+                            <constraint firstItem="5HT-Cb-6nS" firstAttribute="top" secondItem="Wbk-Yf-hm2" secondAttribute="bottom" constant="16" id="ZRH-cO-UaN"/>
+                            <constraint firstItem="zOy-dd-Esi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="dwQ-Tm-r7v"/>
+                            <constraint firstItem="zOy-dd-Esi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="fir-vK-N2y"/>
+                            <constraint firstItem="7XG-ZV-gZ4" firstAttribute="width" secondItem="zOy-dd-Esi" secondAttribute="width" id="jj9-9I-cN7"/>
+                            <constraint firstItem="7XG-ZV-gZ4" firstAttribute="top" secondItem="zOy-dd-Esi" secondAttribute="bottom" constant="32" id="on5-Mp-21C"/>
+                            <constraint firstItem="7XG-ZV-gZ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r3J-ix-1UD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="peopleInRoomLabel" destination="zOy-dd-Esi" id="5Ku-5Z-TVk"/>
+                        <outlet property="roomStateLabel" destination="7XG-ZV-gZ4" id="dge-zB-qDw"/>
+                        <outlet property="walkInButton" destination="Wbk-Yf-hm2" id="Lgb-Gs-AqI"/>
+                        <outlet property="walkOutButton" destination="5HT-Cb-6nS" id="sJs-6q-GIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
