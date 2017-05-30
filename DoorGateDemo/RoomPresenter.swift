@@ -7,78 +7,37 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+
+protocol RoomPresenterDelegate: class {
+    func roomStateChanged(presenter: RoomPresenter, roomState: RoomState)
+}
 
 class RoomPresenter {
     
-    let roomState: Driver<RoomState>
-    let walkInEnabled: Driver<Bool>
-    let walkOutEnabled: Driver<Bool>
-    let occupantsMessage: Driver<String>
-    let stateMessage: Driver<String>
-    
-    init(commands: Observable<RoomCommand>) {
-        let state = commands.scan(.open, accumulator: RoomPresenter.roomAccumulator)
-            .asDriver(onErrorJustReturn: .open)
-            .startWith(.open)
-        self.roomState = state
-        
-        self.walkInEnabled = state.map {
-            switch $0 {
-            case .locked:
-                return false
-            default:
-                return true
-            }
-        }
-        
-        self.walkOutEnabled = state.map {
-            switch $0 {
-            case .occupied:
-                fallthrough
-            case .locked:
-                return true
-            default:
-                return false
-            }
-        }
-        
-        self.occupantsMessage = state.map {
-            switch $0 {
-            case .occupied:
-                return "👤"
-            case .locked:
-                return "👤👤"
-            case .open:
-                return "⬛️"
-            }
-        }
-        
-        self.stateMessage = state.map {
-            switch $0 {
-            case .open:
-                return "🆓"
-            case .occupied:
-                return "🚪"
-            case .locked:
-                return "🔒"
-            }
+    weak var delegate: RoomPresenterDelegate? {
+        didSet {
+            delegate?.roomStateChanged(presenter: self, roomState: self.roomState)
         }
     }
+    private (set) var roomState: RoomState = .open
+    init() {
+    }
     
-    private static func roomAccumulator(prevState: RoomState, command: RoomCommand) -> RoomState {
-        switch (prevState, command) {
+    func handle(command: RoomCommand) {
+        
+        switch (self.roomState, command) {
         case (.open, .walkIn):
-            return .occupied
+            self.roomState = .occupied
         case (.occupied, .walkIn):
-            return .locked
+            self.roomState = .locked
         case (.locked, .walkOut):
-            return .occupied
+            self.roomState = .occupied
         case (.occupied, .walkOut):
-            return .open
+            self.roomState = .open
         default:
-            fatalError("Not sure how to match the command \(command) with the state \(prevState)!")
+            fatalError("Not sure how to match the command \(command) with the state \(self.roomState)!")
         }
+        
+        delegate?.roomStateChanged(presenter: self, roomState: self.roomState)
     }
 }

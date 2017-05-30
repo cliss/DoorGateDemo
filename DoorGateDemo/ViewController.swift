@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 class ViewController: UIViewController {
     
@@ -18,29 +16,45 @@ class ViewController: UIViewController {
     @IBOutlet private (set) var roomStateLabel: UILabel!
     
     private var presenter: RoomPresenter!
-    private var disposeBag = DisposeBag()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let walkIn = walkInButton.rx.tap.map { return RoomCommand.walkIn }
-        let walkOut = walkOutButton.rx.tap.map { return RoomCommand.walkOut }
-        
-        let commands = Observable.of(walkIn, walkOut).merge()
-        
-        self.presenter = RoomPresenter(commands: commands)
-        
-        presenter.occupantsMessage.drive(peopleInRoomLabel.rx.text).disposed(by: disposeBag)
-        presenter.stateMessage.drive(roomStateLabel.rx.text).disposed(by: disposeBag)
-        presenter.walkInEnabled.drive(walkInButton.rx.isEnabled).disposed(by: disposeBag)
-        presenter.walkOutEnabled.drive(walkOutButton.rx.isEnabled).disposed(by: disposeBag)
+        self.presenter = RoomPresenter()
+        self.presenter.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func walkInButtonTapped() {
+        self.presenter.handle(command: .walkIn)
+    }
+    
+    @IBAction func walkOutButtonTapped() {
+        self.presenter.handle(command: .walkOut)
+    }
+    
+}
 
-
+extension ViewController: RoomPresenterDelegate {
+    func roomStateChanged(presenter: RoomPresenter, roomState: RoomState) {
+        walkInButton.isEnabled = (roomState == .open || roomState == .occupied)
+        walkOutButton.isEnabled = (roomState == .occupied || roomState == .locked)
+        switch roomState {
+        case .locked:
+            self.peopleInRoomLabel.text = "👤👤"
+            self.roomStateLabel.text = "🔒"
+        case .occupied:
+            self.peopleInRoomLabel.text = "👤"
+            self.roomStateLabel.text = "🚪"
+        case .open:
+            self.peopleInRoomLabel.text = "⬛️"
+            self.roomStateLabel.text = "🆓"
+        }
+    }
 }
 
