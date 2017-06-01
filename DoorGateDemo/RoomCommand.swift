@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// The commands that can affect the state of the room
+///
+/// - walkIn: A person has just walked into the room
+/// - walkOut: A person has just walked out of the room
 enum RoomCommand {
     case walkIn
     case walkOut
