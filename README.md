@@ -28,7 +28,7 @@ Thus, there are three states that the room can be in:
 # App
 The app looks as follows, in both the imperative and RxSwift versions:
 
-![Screenshot](https://cliss.github.io/DoorGateDemo/images/screenshot.png)
+![Screenshot](https://cliss.github.io/DoorGateDemo/images/screenshot.gif)
 
 The top label indicates how many people are in the room, with ⬛ representing nobody.
 
@@ -41,7 +41,7 @@ The two buttons are enabled or disabled appropriately based on the state of the 
 The "magic" happens in the app in very similar ways between styles:
 
 * The imperative version is in [`RoomPresenter`](https://github.com/cliss/DoorGateDemo/blob/imperative/DoorGateDemo/RoomPresenter.swift)`.handle`.
-* The RxSwift version is in [`RoomPresenter`](https://github.com/cliss/DoorGateDemo/blob/master/DoorGateDemo/RoomPresenter.swift)`.`roomAccumulator`.
+* The RxSwift version is in [`RoomPresenter`](https://github.com/cliss/DoorGateDemo/blob/master/DoorGateDemo/RoomPresenter.swift)`.roomAccumulator`.
 
 You'll note the two methods actually look quite similar; the difference is that in the
 RxSwift version, it is being used as an accumulator for a [`scan`](http://reactivex.io/documentation/operators/scan.html).
