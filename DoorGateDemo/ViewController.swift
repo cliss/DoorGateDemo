@@ -3,10 +3,11 @@
 //  DoorGateDemo
 //
 //  Created by Casey Liss on 17/5/17.
-//  Copyright © 2017 Snagajob. All rights reserved.
+//  Copyright © 2017 Casey Liss. All rights reserved.
 //
 
 import UIKit
+import ReSwift
 
 class ViewController: UIViewController {
     
@@ -15,46 +16,48 @@ class ViewController: UIViewController {
     @IBOutlet private (set) var peopleInRoomLabel: UILabel!
     @IBOutlet private (set) var roomStateLabel: UILabel!
     
-    private var presenter: RoomPresenter!
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.presenter = RoomPresenter()
-        self.presenter.delegate = self
+        roomStore.subscribe(self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        roomStore.unsubscribe(self)
     }
     
     @IBAction func walkInButtonTapped() {
-        self.presenter.handle(command: .walkIn)
+        roomStore.dispatch(WalkInAction())
     }
     
     @IBAction func walkOutButtonTapped() {
-        self.presenter.handle(command: .walkOut)
+        roomStore.dispatch(WalkOutAction())
     }
     
 }
 
-extension ViewController: RoomPresenterDelegate {
-    func roomStateChanged(presenter: RoomPresenter, roomState: RoomState) {
-        walkInButton.isEnabled = (roomState == .open || roomState == .occupied)
-        walkOutButton.isEnabled = (roomState == .occupied || roomState == .locked)
-        switch roomState {
-        case .locked:
-            self.peopleInRoomLabel.text = "👤👤"
-            self.roomStateLabel.text = "🔒"
+extension ViewController: StoreSubscriber {
+    
+    func newState(state: RoomState) {
+        
+        switch state {
+        case .open:
+            self.walkInButton.isEnabled = true
+            self.walkOutButton.isEnabled = false
+            self.peopleInRoomLabel.text = "⬛"
+            self.roomStateLabel.text = "🆓"
         case .occupied:
+            self.walkInButton.isEnabled = true
+            self.walkOutButton.isEnabled = true
             self.peopleInRoomLabel.text = "👤"
             self.roomStateLabel.text = "🚪"
-        case .open:
-            self.peopleInRoomLabel.text = "⬛️"
-            self.roomStateLabel.text = "🆓"
+        case .locked:
+            self.walkInButton.isEnabled = false
+            self.walkOutButton.isEnabled = true
+            self.peopleInRoomLabel.text = "👤👤"
+            self.roomStateLabel.text = "🔒"
         }
     }
 }
-

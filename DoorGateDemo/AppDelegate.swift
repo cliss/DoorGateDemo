@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import ReSwift
+
+let roomStore = Store(reducer: RoomReducer.roomReducer,
+                      state: .open)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
