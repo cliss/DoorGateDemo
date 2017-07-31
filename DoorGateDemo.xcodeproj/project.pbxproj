@@ -7,38 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2587E0CD1F2F6EF4009FF5BD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 2587E0CC1F2F6EF4009FF5BD /* Cartfile */; };
 		259CB7401ECCBF5700775FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB73F1ECCBF5700775FD5 /* AppDelegate.swift */; };
 		259CB7421ECCBF5700775FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB7411ECCBF5700775FD5 /* ViewController.swift */; };
 		259CB7451ECCBF5700775FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259CB7431ECCBF5700775FD5 /* Main.storyboard */; };
 		259CB7471ECCBF5700775FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259CB7461ECCBF5700775FD5 /* Assets.xcassets */; };
 		259CB74A1ECCBF5700775FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259CB7481ECCBF5700775FD5 /* LaunchScreen.storyboard */; };
-		259CB7541ECCC01000775FD5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7521ECCC01000775FD5 /* RxCocoa.framework */; };
-		259CB7551ECCC01000775FD5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7531ECCC01000775FD5 /* RxSwift.framework */; };
 		259CB7571ECCC26D00775FD5 /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB7561ECCC26D00775FD5 /* RoomState.swift */; };
 		259CB7591ECCC29F00775FD5 /* RoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB7581ECCC29F00775FD5 /* RoomPresenter.swift */; };
 		259CB75B1ECCC2DE00775FD5 /* RoomCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB75A1ECCC2DE00775FD5 /* RoomCommand.swift */; };
-		259CB75C1ECCC79100775FD5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7521ECCC01000775FD5 /* RxCocoa.framework */; };
-		259CB75D1ECCC79100775FD5 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7521ECCC01000775FD5 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		259CB75E1ECCC79100775FD5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7531ECCC01000775FD5 /* RxSwift.framework */; };
-		259CB75F1ECCC79100775FD5 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 259CB7531ECCC01000775FD5 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		259CB7601ECCC79100775FD5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				259CB75F1ECCC79100775FD5 /* RxSwift.framework in Embed Frameworks */,
-				259CB75D1ECCC79100775FD5 /* RxCocoa.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		2587E0CC1F2F6EF4009FF5BD /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		259CB73C1ECCBF5700775FD5 /* DoorGateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorGateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259CB73F1ECCBF5700775FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259CB7411ECCBF5700775FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +27,6 @@
 		259CB7461ECCBF5700775FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		259CB7491ECCBF5700775FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		259CB74B1ECCBF5700775FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		259CB7521ECCC01000775FD5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		259CB7531ECCC01000775FD5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		259CB7561ECCC26D00775FD5 /* RoomState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomState.swift; sourceTree = "<group>"; };
 		259CB7581ECCC29F00775FD5 /* RoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomPresenter.swift; sourceTree = "<group>"; };
 		259CB75A1ECCC2DE00775FD5 /* RoomCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCommand.swift; sourceTree = "<group>"; };
@@ -58,10 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				259CB75E1ECCC79100775FD5 /* RxSwift.framework in Frameworks */,
-				259CB75C1ECCC79100775FD5 /* RxCocoa.framework in Frameworks */,
-				259CB7541ECCC01000775FD5 /* RxCocoa.framework in Frameworks */,
-				259CB7551ECCC01000775FD5 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +46,7 @@
 		259CB7331ECCBF5700775FD5 = {
 			isa = PBXGroup;
 			children = (
+				2587E0CC1F2F6EF4009FF5BD /* Cartfile */,
 				259CB73E1ECCBF5700775FD5 /* DoorGateDemo */,
 				259CB73D1ECCBF5700775FD5 /* Products */,
 				259CB7511ECCC00F00775FD5 /* Frameworks */,
@@ -104,8 +80,6 @@
 		259CB7511ECCC00F00775FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				259CB7521ECCC01000775FD5 /* RxCocoa.framework */,
-				259CB7531ECCC01000775FD5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,7 +94,6 @@
 				259CB7381ECCBF5700775FD5 /* Sources */,
 				259CB7391ECCBF5700775FD5 /* Frameworks */,
 				259CB73A1ECCBF5700775FD5 /* Resources */,
-				259CB7601ECCC79100775FD5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +146,7 @@
 			files = (
 				259CB74A1ECCBF5700775FD5 /* LaunchScreen.storyboard in Resources */,
 				259CB7471ECCBF5700775FD5 /* Assets.xcassets in Resources */,
+				2587E0CD1F2F6EF4009FF5BD /* Cartfile in Resources */,
 				259CB7451ECCBF5700775FD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +334,7 @@
 				259CB7501ECCBF5700775FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
