@@ -27,8 +27,6 @@
 		259CB7461ECCBF5700775FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		259CB7491ECCBF5700775FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		259CB74B1ECCBF5700775FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		259CB7521ECCC01000775FD5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		259CB7531ECCC01000775FD5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		259CB7561ECCC26D00775FD5 /* RoomState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomState.swift; sourceTree = "<group>"; };
 		259CB7581ECCC29F00775FD5 /* RoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomPresenter.swift; sourceTree = "<group>"; };
 		259CB75A1ECCC2DE00775FD5 /* RoomCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCommand.swift; sourceTree = "<group>"; };
@@ -82,8 +80,6 @@
 		259CB7511ECCC00F00775FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				259CB7521ECCC01000775FD5 /* RxCocoa.framework */,
-				259CB7531ECCC01000775FD5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
