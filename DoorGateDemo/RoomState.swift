@@ -16,3 +16,16 @@ enum RoomState {
 }
 
 extension RoomState: StateType {}
+
+extension RoomState: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .open:
+            return "open"
+        case .occupied:
+            return "occupied"
+        case .locked:
+            return "locked"
+        }
+    }
+}

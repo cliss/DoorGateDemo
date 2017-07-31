@@ -8,5 +8,14 @@
 
 import ReSwift
 
-struct WalkInAction: Action {}
-struct WalkOutAction: Action {}
+struct WalkInAction: Action, CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "walkIn"
+    }
+}
+
+struct WalkOutAction: Action, CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "walkOut"
+    }
+}

@@ -9,8 +9,20 @@
 import UIKit
 import ReSwift
 
+
+let logger: Middleware<RoomState> = { dispatch, getState in
+    return { next in
+        return { action in
+            var stateString = "-none-"
+            if let state = getState() { stateString = String(describing: state) }
+            print("=======> \(stateString) → \(action)")
+            return next(action)
+        }
+    }
+}
 let roomStore = Store(reducer: RoomReducer.roomReducer,
-                      state: .open)
+                      state: .open,
+                      middleware: [logger])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
