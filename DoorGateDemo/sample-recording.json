@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp" : 523224993.374273,
+    "action" : {
+      "type" : "WalkInAction",
+      "payload" : {
+
+      },
+      "isTypedAction" : true
+    }
+  },
+  {
+    "timestamp" : 523224993.377427,
+    "action" : {
+      "type" : "WalkInAction",
+      "payload" : {
+
+      },
+      "isTypedAction" : true
+    }
+  },
+  {
+    "timestamp" : 523224993.378565,
+    "action" : {
+      "type" : "WalkOutAction",
+      "payload" : {
+
+      },
+      "isTypedAction" : true
+    }
+  },
+  {
+    "timestamp" : 523224993.379076,
+    "action" : {
+      "type" : "WalkInAction",
+      "payload" : {
+
+      },
+      "isTypedAction" : true
+    }
+  }
+]

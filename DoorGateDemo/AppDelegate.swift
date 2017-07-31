@@ -8,7 +8,7 @@
 
 import UIKit
 import ReSwift
-
+import ReSwiftRecorder
 
 let logger: Middleware<RoomState> = { dispatch, getState in
     return { next in
@@ -20,9 +20,14 @@ let logger: Middleware<RoomState> = { dispatch, getState in
         }
     }
 }
-let roomStore = Store(reducer: RoomReducer.roomReducer,
-                      state: .open,
-                      middleware: [logger])
+//let roomStore = Store(reducer: RoomReducer.roomReducer,
+//                      state: .open,
+//                      middleware: [logger])
+let roomStore = RecordingMainStore(reducer: RoomReducer.roomReducer,
+                                   state: .open,
+                                   typeMaps: [walkActionsTypeMap],
+                                   recording: "recording.json",
+                                   middleware: [logger])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

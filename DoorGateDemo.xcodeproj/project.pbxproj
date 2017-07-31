@@ -12,6 +12,9 @@
 		2587E0D61F2F7128009FF5BD /* RoomReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2587E0D51F2F7128009FF5BD /* RoomReducer.swift */; };
 		2587E0D81F2F7758009FF5BD /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2587E0D71F2F7758009FF5BD /* ReSwift.framework */; };
 		2587E0D91F2F7758009FF5BD /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2587E0D71F2F7758009FF5BD /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2587E0DD1F2FAD9B009FF5BD /* ReSwiftRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2587E0DC1F2FAD9B009FF5BD /* ReSwiftRecorder.framework */; };
+		2587E0DE1F2FAD9B009FF5BD /* ReSwiftRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2587E0DC1F2FAD9B009FF5BD /* ReSwiftRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2587E0E31F2FC949009FF5BD /* sample-recording.json in Resources */ = {isa = PBXBuildFile; fileRef = 2587E0E21F2FC949009FF5BD /* sample-recording.json */; };
 		259CB7401ECCBF5700775FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB73F1ECCBF5700775FD5 /* AppDelegate.swift */; };
 		259CB7421ECCBF5700775FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259CB7411ECCBF5700775FD5 /* ViewController.swift */; };
 		259CB7451ECCBF5700775FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259CB7431ECCBF5700775FD5 /* Main.storyboard */; };
@@ -30,6 +33,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2587E0D91F2F7758009FF5BD /* ReSwift.framework in Embed Frameworks */,
+				2587E0DE1F2FAD9B009FF5BD /* ReSwiftRecorder.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +45,8 @@
 		2587E0D31F2F70FB009FF5BD /* RoomActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomActions.swift; path = "State Management/RoomActions.swift"; sourceTree = "<group>"; };
 		2587E0D51F2F7128009FF5BD /* RoomReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomReducer.swift; path = "State Management/RoomReducer.swift"; sourceTree = "<group>"; };
 		2587E0D71F2F7758009FF5BD /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		2587E0DC1F2FAD9B009FF5BD /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = Carthage/Build/iOS/ReSwiftRecorder.framework; sourceTree = "<group>"; };
+		2587E0E21F2FC949009FF5BD /* sample-recording.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sample-recording.json"; sourceTree = "<group>"; };
 		259CB73C1ECCBF5700775FD5 /* DoorGateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorGateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259CB73F1ECCBF5700775FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259CB7411ECCBF5700775FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2587E0D81F2F7758009FF5BD /* ReSwift.framework in Frameworks */,
+				2587E0DD1F2FAD9B009FF5BD /* ReSwiftRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +75,7 @@
 		2587E0CE1F2F706F009FF5BD /* State Management */ = {
 			isa = PBXGroup;
 			children = (
+				2587E0E21F2FC949009FF5BD /* sample-recording.json */,
 				259CB7561ECCC26D00775FD5 /* RoomState.swift */,
 				2587E0D31F2F70FB009FF5BD /* RoomActions.swift */,
 				2587E0D51F2F7128009FF5BD /* RoomReducer.swift */,
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2587E0D71F2F7758009FF5BD /* ReSwift.framework */,
+				2587E0DC1F2FAD9B009FF5BD /* ReSwiftRecorder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				259CB74A1ECCBF5700775FD5 /* LaunchScreen.storyboard in Resources */,
+				2587E0E31F2FC949009FF5BD /* sample-recording.json in Resources */,
 				259CB7471ECCBF5700775FD5 /* Assets.xcassets in Resources */,
 				2587E0CD1F2F6EF4009FF5BD /* Cartfile in Resources */,
 				259CB7451ECCBF5700775FD5 /* Main.storyboard in Resources */,
@@ -196,10 +206,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRecorder.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwiftRecorder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
